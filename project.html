@@ -1045,6 +1045,96 @@ f(x)
     </tr>
 
 </table>
+                <h3>Example:</h3>
+                <h3>Solve</h3>
+
+<p>
+d²y/dx² + dy/dx = 1/(1+e<sup>x</sup>)
+</p>
+
+<h3>Solution:</h3>
+
+<p>
+Let D = d/dx
+</p>
+
+<p>
+(D² + D)y = 1/(1+e<sup>x</sup>)
+</p>
+
+<p>
+Auxiliary equation:
+</p>
+
+<p>
+D² + D = 0
+</p>
+
+<p>
+D(D + 1) = 0
+</p>
+
+<p>
+D = 0 , -1
+</p>
+
+<p>
+Complementary Function:
+</p>
+
+<p>
+y<sub>c</sub> = c₁ + c₂e<sup>-x</sup>
+</p>
+
+<p>
+Particular Integral:
+</p>
+
+<p>
+y<sub>p</sub> = [1/D(D+1)] × 1/(1+e<sup>x</sup>)
+</p>
+
+<p>
+Using partial fractions:
+</p>
+
+<p>
+y<sub>p</sub> =
+[1/D − 1/(D+1)] × 1/(1+e<sup>x</sup>)
+</p>
+
+<p>
+y<sub>p</sub> =
+∫ dx/(1+e<sup>x</sup>)
+− e<sup>-x</sup>
+∫ e<sup>x</sup>dx/(1+e<sup>x</sup>)
+</p>
+
+<p>
+For first integral:
+e<sup>-x</sup> + 1 = t
+</p>
+
+<p>
+For second integral:
+1 + e<sup>x</sup> = u
+</p>
+
+<p>
+y<sub>p</sub> =
+−ln(e<sup>-x</sup> + 1)
+− e<sup>-x</sup>ln(1 + e<sup>x</sup>)
+</p>
+
+<p>
+Final Answer:
+</p>
+
+<p>
+y = c₁ + c₂e<sup>-x</sup>
+− ln(e<sup>-x</sup> + 1)
+− e<sup>-x</sup>ln(1 + e<sup>x</sup>)
+</p>
             </div>
         </div>
  
