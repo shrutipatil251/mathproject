@@ -1137,47 +1137,235 @@ y = c₁ + c₂e<sup>-x</sup>
             </div>
         </div>
  
-        <!-- 3. PRETEST PAGE -->
-        <div id="page-pretest" class="content card-page">
-            <button class="back-btn" onclick="goBack()">
-                <i class="fas fa-arrow-left"></i> Back to Dashboard
-            </button>
-            <div class="card-page-header">
-                <i class="fas fa-question-circle"></i>
-                <div>
-                    <h2>Pretest</h2>
-                    <p>Answer before starting the experiment</p>
-                </div>
-            </div>
- 
-            <div class="mcq-question">
-                <p>Q1. The rank of a zero matrix of order 3×3 is:</p>
-                <label class="mcq-option"><input type="radio" name="q1" value="a"> 3</label>
-                <label class="mcq-option"><input type="radio" name="q1" value="b"> 1</label>
-                <label class="mcq-option"><input type="radio" name="q1" value="c"> 0</label>
-                <label class="mcq-option"><input type="radio" name="q1" value="d"> Undefined</label>
-            </div>
- 
-            <div class="mcq-question">
-                <p>Q2. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
-                <label class="mcq-option"><input type="radio" name="q2" value="a"> 5</label>
-                <label class="mcq-option"><input type="radio" name="q2" value="b"> 4</label>
-                <label class="mcq-option"><input type="radio" name="q2" value="c"> 20</label>
-                <label class="mcq-option"><input type="radio" name="q2" value="d"> 9</label>
-            </div>
- 
-            <div class="mcq-question">
-                <p>Q3. Which operation does NOT change the rank of a matrix?</p>
-                <label class="mcq-option"><input type="radio" name="q3" value="a"> Adding a multiple of one row to another</label>
-                <label class="mcq-option"><input type="radio" name="q3" value="b"> Multiplying the entire matrix by a scalar</label>
-                <label class="mcq-option"><input type="radio" name="q3" value="c"> Squaring the matrix</label>
-                <label class="mcq-option"><input type="radio" name="q3" value="d"> Replacing a row with zeros</label>
-            </div>
- 
-            <button class="submit-btn" onclick="submitTest('pretest')">
-                <i class="fas fa-paper-plane"></i> Submit Pretest
-            </button>
+     <!-- 3. PRETEST PAGE -->
+<div id="page-pretest" class="content card-page">
+
+    <button class="back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </button>
+
+    <div class="card-page-header">
+        <i class="fas fa-question-circle"></i>
+        <div>
+            <h2>Pretest</h2>
+            <p>Answer before starting the experiment</p>
         </div>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="mcq-question">
+        <p>Q1. The rank of a zero matrix of order 3×3 is:</p>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">3</button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">1</button>
+
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg1','hint1','actions1')">0</button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">Undefined</button>
+
+        <div id="msg1" class="message"></div>
+
+        <div id="actions1" class="actions">
+            <button class="retry-btn" onclick="retryQuestion(this,'msg1','hint1','actions1')">Retry</button>
+            <button class="hint-btn" onclick="showHint('hint1')">Hint</button>
+        </div>
+
+        <div id="hint1" class="hint-text">
+            Hint: A zero matrix has no non-zero rows or columns.
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="mcq-question">
+        <p>Q2. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">5</button>
+
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg2','hint2','actions2')">4</button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">20</button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">9</button>
+
+        <div id="msg2" class="message"></div>
+
+        <div id="actions2" class="actions">
+            <button class="retry-btn" onclick="retryQuestion(this,'msg2','hint2','actions2')">Retry</button>
+            <button class="hint-btn" onclick="showHint('hint2')">Hint</button>
+        </div>
+
+        <div id="hint2" class="hint-text">
+            Hint: Maximum rank = minimum of rows and columns.
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="mcq-question">
+        <p>Q3. Which operation does NOT change the rank of a matrix?</p>
+
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg3','hint3','actions3')">
+            Adding a multiple of one row to another
+        </button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
+            Multiplying the entire matrix by a scalar
+        </button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
+            Squaring the matrix
+        </button>
+
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
+            Replacing a row with zeros
+        </button>
+
+        <div id="msg3" class="message"></div>
+
+        <div id="actions3" class="actions">
+            <button class="retry-btn" onclick="retryQuestion(this,'msg3','hint3','actions3')">Retry</button>
+            <button class="hint-btn" onclick="showHint('hint3')">Hint</button>
+        </div>
+
+        <div id="hint3" class="hint-text">
+            Hint: Elementary row operations preserve rank.
+        </div>
+    </div>
+
+</div>
+
+<!-- CSS -->
+<style>
+
+.option-btn{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border:2px solid #ccc;
+    border-radius:6px;
+    background:white;
+    cursor:pointer;
+    text-align:left;
+    transition:0.3s;
+}
+
+.option-btn:hover{
+    background:#f5f5f5;
+}
+
+.correct{
+    background:#4CAF50 !important;
+    color:white;
+    border-color:#4CAF50;
+}
+
+.wrong{
+    background:#f44336 !important;
+    color:white;
+    border-color:#f44336;
+}
+
+.message{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.success{
+    color:green;
+}
+
+.error{
+    color:red;
+}
+
+.actions{
+    margin-top:10px;
+    display:none;
+}
+
+.retry-btn,
+.hint-btn{
+    padding:8px 14px;
+    margin-right:10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+}
+
+.retry-btn{
+    background:#2196F3;
+}
+
+.hint-btn{
+    background:#ff9800;
+}
+
+.hint-text{
+    margin-top:10px;
+    display:none;
+    font-style:italic;
+}
+
+</style>
+
+<!-- JavaScript -->
+<script>
+
+function checkAnswer(button,isCorrect,msgId,hintId,actionsId){
+
+    let questionBox = button.parentElement;
+    let buttons = questionBox.querySelectorAll(".option-btn");
+
+    buttons.forEach(btn=>{
+        btn.disabled = true;
+    });
+
+    let message = document.getElementById(msgId);
+    let actions = document.getElementById(actionsId);
+
+    if(isCorrect){
+
+        button.classList.add("correct");
+
+        message.innerHTML = "Congratulations! Your answer is right";
+        message.className = "message success";
+
+        actions.style.display = "none";
+    }
+    else{
+
+        button.classList.add("wrong");
+
+        message.innerHTML = "Oops! Your answer is wrong";
+        message.className = "message error";
+
+        actions.style.display = "block";
+    }
+}
+
+function retryQuestion(button,msgId,hintId,actionsId){
+
+    let questionBox = button.parentElement.parentElement;
+    let buttons = questionBox.querySelectorAll(".option-btn");
+
+    buttons.forEach(btn=>{
+        btn.disabled = false;
+        btn.classList.remove("correct");
+        btn.classList.remove("wrong");
+    });
+
+    document.getElementById(msgId).innerHTML = "";
+    document.getElementById(actionsId).style.display = "none";
+    document.getElementById(hintId).style.display = "none";
+}
+
+function showHint(hintId){
+    document.getElementById(hintId).style.display = "block";
+}
+
+</script>
  
         <!-- 4. SIMULATION PAGE -->
         <div id="page-simulation" class="content card-page">
