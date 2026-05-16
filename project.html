@@ -1138,6 +1138,7 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
  
      <!-- 3. PRETEST PAGE -->
+<!-- ================= PRETEST PAGE ================= -->
 <div id="page-pretest" class="content card-page">
 
     <button class="back-btn" onclick="goBack()">
@@ -1156,84 +1157,229 @@ y = c₁ + c₂e<sup>-x</sup>
     <div class="mcq-question">
         <p>Q1. The rank of a zero matrix of order 3×3 is:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">3</button>
+        <button class="option-btn" onclick="selectAnswer(this, false)">3</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">1</button>
+        <button class="option-btn" onclick="selectAnswer(this, false)">1</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg1','hint1','actions1')">0</button>
+        <button class="option-btn correct-answer" onclick="selectAnswer(this, true)">0</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">Undefined</button>
-
-        <div id="msg1" class="message"></div>
-
-        <div id="actions1" class="actions">
-            <button class="retry-btn" onclick="retryQuestion(this,'msg1','hint1','actions1')">Retry</button>
-            <button class="hint-btn" onclick="showHint('hint1')">Hint</button>
-        </div>
-
-        <div id="hint1" class="hint-text">
-            Hint: A zero matrix has no non-zero rows or columns.
-        </div>
+        <button class="option-btn" onclick="selectAnswer(this, false)">Undefined</button>
     </div>
 
     <!-- Question 2 -->
     <div class="mcq-question">
         <p>Q2. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">5</button>
+        <button class="option-btn" onclick="selectAnswer(this, false)">5</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg2','hint2','actions2')">4</button>
+        <button class="option-btn correct-answer" onclick="selectAnswer(this, true)">4</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">20</button>
+        <button class="option-btn" onclick="selectAnswer(this, false)">20</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">9</button>
-
-        <div id="msg2" class="message"></div>
-
-        <div id="actions2" class="actions">
-            <button class="retry-btn" onclick="retryQuestion(this,'msg2','hint2','actions2')">Retry</button>
-            <button class="hint-btn" onclick="showHint('hint2')">Hint</button>
-        </div>
-
-        <div id="hint2" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
-        </div>
+        <button class="option-btn" onclick="selectAnswer(this, false)">9</button>
     </div>
 
     <!-- Question 3 -->
     <div class="mcq-question">
         <p>Q3. Which operation does NOT change the rank of a matrix?</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg3','hint3','actions3')">
+        <button class="option-btn correct-answer" onclick="selectAnswer(this, true)">
             Adding a multiple of one row to another
         </button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
+        <button class="option-btn" onclick="selectAnswer(this, false)">
             Multiplying the entire matrix by a scalar
         </button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
+        <button class="option-btn" onclick="selectAnswer(this, false)">
             Squaring the matrix
         </button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
+        <button class="option-btn" onclick="selectAnswer(this, false)">
+            Replacing a row with zeros
+        </button>
+    </div>
+
+    <!-- View Score Button -->
+    <div style="text-align:center; margin-top:20px;">
+        <button class="submit-btn" onclick="showScorePage()">
+            View Score
+        </button>
+    </div>
+
+</div>
+
+<!-- ================= SCORE PAGE ================= -->
+<div id="page-score" class="content card-page" style="display:none;">
+
+    <div class="card-page-header">
+        <i class="fas fa-chart-bar"></i>
+        <div>
+            <h2>Your Score</h2>
+            <p>Quiz completed successfully</p>
+        </div>
+    </div>
+
+    <div class="score-box">
+        <h1 id="scoreText">0 / 3</h1>
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <button class="submit-btn" onclick="showSolutionPage()">
+            View Solution
+        </button>
+    </div>
+
+</div>
+
+<!-- ================= SOLUTION PAGE ================= -->
+<div id="page-solution" class="content card-page" style="display:none;">
+
+    <div class="card-page-header">
+        <i class="fas fa-check-circle"></i>
+        <div>
+            <h2>Solutions</h2>
+            <p>Review your answers</p>
+        </div>
+    </div>
+
+    <!-- Solution Q1 -->
+    <div class="mcq-question">
+        <p>Q1. The rank of a zero matrix of order 3×3 is:</p>
+
+        <button class="option-btn wrong">3</button>
+
+        <button class="option-btn wrong">1</button>
+
+        <button class="option-btn correct">0</button>
+
+        <button class="option-btn wrong">Undefined</button>
+
+        <div class="message success" id="solutionMsg1"></div>
+
+        <div style="margin-top:10px;">
+            <button class="submit-btn">
+                View Detailed Solution
+            </button>
+        </div>
+    </div>
+
+    <!-- Solution Q2 -->
+    <div class="mcq-question">
+        <p>Q2. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+
+        <button class="option-btn wrong">5</button>
+
+        <button class="option-btn correct">4</button>
+
+        <button class="option-btn wrong">20</button>
+
+        <button class="option-btn wrong">9</button>
+
+        <div class="message success" id="solutionMsg2"></div>
+
+        <div style="margin-top:10px;">
+            <button class="submit-btn">
+                View Detailed Solution
+            </button>
+        </div>
+    </div>
+
+    <!-- Solution Q3 -->
+    <div class="mcq-question">
+        <p>Q3. Which operation does NOT change the rank of a matrix?</p>
+
+        <button class="option-btn correct">
+            Adding a multiple of one row to another
+        </button>
+
+        <button class="option-btn wrong">
+            Multiplying the entire matrix by a scalar
+        </button>
+
+        <button class="option-btn wrong">
+            Squaring the matrix
+        </button>
+
+        <button class="option-btn wrong">
             Replacing a row with zeros
         </button>
 
-        <div id="msg3" class="message"></div>
+        <div class="message success" id="solutionMsg3"></div>
 
-        <div id="actions3" class="actions">
-            <button class="retry-btn" onclick="retryQuestion(this,'msg3','hint3','actions3')">Retry</button>
-            <button class="hint-btn" onclick="showHint('hint3')">Hint</button>
-        </div>
-
-        <div id="hint3" class="hint-text">
-            Hint: Elementary row operations preserve rank.
+        <div style="margin-top:10px;">
+            <button class="submit-btn">
+                View Detailed Solution
+            </button>
         </div>
     </div>
 
 </div>
 
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+let score = 0;
+let answers = [];
+
+function selectAnswer(button, isCorrect) {
+
+    let parent = button.parentElement;
+    let buttons = parent.querySelectorAll(".option-btn");
+
+    // Prevent multiple attempts
+    if (parent.classList.contains("answered")) {
+        return;
+    }
+
+    parent.classList.add("answered");
+
+    buttons.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+    answers.push(isCorrect);
+
+    if (isCorrect) {
+        score++;
+    }
+}
+
+function showScorePage() {
+
+    document.getElementById("page-pretest").style.display = "none";
+    document.getElementById("page-score").style.display = "block";
+
+    document.getElementById("scoreText").innerHTML = score + " / 3";
+}
+
+function showSolutionPage() {
+
+    document.getElementById("page-score").style.display = "none";
+    document.getElementById("page-solution").style.display = "block";
+
+    // Show correct/wrong message
+
+    document.getElementById("solutionMsg1").innerHTML =
+        answers[0]
+        ? "🎉 Congratulations! Your answer is correct"
+        : "❌ Your answer is wrong";
+
+    document.getElementById("solutionMsg2").innerHTML =
+        answers[1]
+        ? "🎉 Congratulations! Your answer is correct"
+        : "❌ Your answer is wrong";
+
+    document.getElementById("solutionMsg3").innerHTML =
+        answers[2]
+        ? "🎉 Congratulations! Your answer is correct"
+        : "❌ Your answer is wrong";
+}
+
+</script>
 <!-- CSS -->
 <style>
 
