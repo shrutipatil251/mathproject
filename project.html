@@ -1202,23 +1202,15 @@ y = c₁ + c₂e<sup>-x</sup>
 
     <!-- Question 3 -->
     <div class="mcq-question">
-        <p>Q3. Which operation does NOT change the rank of a matrix?</p>
+        <p>Q3. The order of the differential equation d<sup>2</sup>y/dx<sup>2</sup> + 3dy/dx + y = 0 is: </p>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg3','hint3','actions3')">
-            Adding a multiple of one row to another
-        </button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">1</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
-            Multiplying the entire matrix by a scalar
-        </button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg3','hint3','actions3')">2</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
-            Squaring the matrix
-        </button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">3 </button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">
-            Replacing a row with zeros
-        </button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg3','hint3','actions3')">0</button>
 
         <div id="msg3" class="message"></div>
 
@@ -1228,20 +1220,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint3" class="hint-text">
-            Hint: Elementary row operations preserve rank.
+            Hint: Order is the power of the highest derivative present in the equation.
         </div>
     </div>
     <!-- Question 4 -->
     <div class="mcq-question">
-        <p>Q4. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q4. Which of the following is a linear differential equation?</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg4','hint4','actions4')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg4','hint4','actions4')">dy/dx + y<sub>2</sub> = x</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg4','hint4','actions4')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg4','hint4','actions4')">xy<sub>2</sub> + 1 = 0</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg4','hint4','actions4')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg4','hint4','actions4')">(dy/dx)<sup>2</sup> + y = 0</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg4','hint4','actions4')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg4','hint4','actions4')">dy/dx + y = x</button>
 
         <div id="msg4" class="message"></div>
 
@@ -1251,20 +1243,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint4" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: In a linear equation, variables and derivatives should not have powers greater than 1.
         </div>
     </div>
     <!-- Question 5 -->
     <div class="mcq-question">
-        <p>Q5. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q5. The degree of the equation (d<sup>2</sup>y/dx<sup>2</sup>)<sup>2</sup> + dy/dx + y = 0 is:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions')">0</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg5','hint5','actions5')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions5')">1</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions5')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg5','hint5','actions5')">2</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions5')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions5')">3</button>
 
         <div id="msg5" class="message"></div>
 
@@ -1274,20 +1266,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint5" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: Degree is the power of the highest order derivative.
         </div>
     </div>
     <!-- Question 6 -->
     <div class="mcq-question">
-        <p>Q6. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q6. The solution of dy/dx + y = 0 is:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg6','hint6','actions6')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg6','hint6','actions6')">y=e<sup>x</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg6','hint6','actions6')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg6','hint6','actions6')">y=ce<sup>x</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg6','hint6','actions6')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg6','hint6','actions6')">y=ce<sup>-x</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg6','hint6','actions6')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg6','hint6','actions6')">y=x<sup>2</sup></button>
 
         <div id="msg6" class="message"></div>
 
@@ -1297,20 +1289,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint6" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: Use the formula for solving homogeneous linear differential equations.
         </div>
     </div>
     <!-- Question 7 -->
     <div class="mcq-question">
-        <p>Q7. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q7. In the equation dy/dx + 2y = x the value of P(x) is </p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg7','hint7','actions7')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg7','hint7','actions7')">x</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg7','hint7','actions7')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg7','hint7','actions7')">y</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg7','hint7','actions7')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg7','hint7','actions7')">2</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg7','hint7','actions7')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg7','hint7','actions7')">1</button>
 
         <div id="msg7" class="message"></div>
 
@@ -1320,20 +1312,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint7" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: Compare the equation with the standard form dy/dx + P(x)y = x
         </div>
     </div>
     <!-- Question 8 -->
     <div class="mcq-question">
-        <p>Q8. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q8. The integrating factor of dy/dx + 2y = x is: </p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg8','hint8','actions8')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg8','hint8','actions8')">e<sup>x</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg8','hint8','actions8')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg8','hint8','actions8')">e<sup>-x</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg8','hint8','actions8')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg8','hint8','actions8')">e<sup>2x</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg8','hint8','actions8')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg8','hint8','actions8')">x<sup>2</sup></button>
 
         <div id="msg8" class="message"></div>
 
@@ -1343,20 +1335,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint8" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: Apply the formula I.F = e<sup>∫Pdx</sup>
         </div>
     </div>
     <!-- Question 9 -->
     <div class="mcq-question">
-        <p>Q9. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q9. A differential equation containing only the first derivative is called:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg9','hint9','actions9')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg9','hint9','actions9')">Second-order equation</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg9','hint9','actions9')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg9','hint9','actions9')">Partial differential equation</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg9','hint9','actions9')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg9','hint9','actions9')">First-order equation</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg9','hint9','actions9')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg9','hint9','actions9')">Non-linear equation</button>
 
         <div id="msg9" class="message"></div>
 
@@ -1366,20 +1358,20 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint9" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: The name depends on the highest derivative present.
         </div>
     </div>
     <!-- Question 10 -->
     <div class="mcq-question">
-        <p>Q10. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q10. Which method is commonly used to solve first-order linear differential equations?</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg10','hint10','actions10')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg10','hint10','actions10')">Matrix method</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg10','hint10','actions10')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg10','hint10','actions10')">Integrating factor method</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg10','hint10','actions10')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg10','hint10','actions10')">Elimination method</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg10','hint10','actions10')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg10','hint10','actions10')">Graphical method</button>
 
         <div id="msg10" class="message"></div>
 
@@ -1389,7 +1381,7 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint10" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: Think about the standard method for linear differential equations.
         </div>
     </div>
 
