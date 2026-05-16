@@ -1156,13 +1156,13 @@ y = c₁ + c₂e<sup>-x</sup>
     <div class="mcq-question">
         <p>Q1. A first-order linear differential equation is generally written as:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg1','hint1','actions1')">\( \frac{dy}{dx} \)+ P(x)y = Q(x)</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg1','hint1','actions1')">dy/dx + P(x)y = Q(x)</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">\( \frac{dy}{dx} \)+ y<sup>2</sup></button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">dy/dx + y<sup>2</sup> = 0</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">0</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">d<sup>2</sup>y/dx<sup>2</sup> + y = 0</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">Undefined</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg1','hint1','actions1')">y + x = 0</button>
 
         <div id="msg1" class="message"></div>
 
@@ -1172,21 +1172,21 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint1" class="hint-text">
-            Hint: A zero matrix has no non-zero rows or columns.
+            Hint: Check the standard form of a first-order linear differential equation.
         </div>
     </div>
 
     <!-- Question 2 -->
     <div class="mcq-question">
-        <p>Q2. If A is a 4×5 matrix, the maximum possible rank of A is:</p>
+        <p>Q2. The integrating factor (I.F.) of dy/dx + Py = Q is: </p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">5</button>
+        <button class="option-btn" onclick="checkAnswer(this,true,'msg2','hint2','actions2')">e<sup>∫Pdx</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,true,'msg2','hint2','actions2')">4</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">e<sup>∫Qdx</sup></button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">20</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">∫Pdx</button>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">9</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg2','hint2','actions2')">P + Q </button>
 
         <div id="msg2" class="message"></div>
 
@@ -1196,7 +1196,7 @@ y = c₁ + c₂e<sup>-x</sup>
         </div>
 
         <div id="hint2" class="hint-text">
-            Hint: Maximum rank = minimum of rows and columns.
+            Hint: Integrating factor depends on the coefficient of y.
         </div>
     </div>
 
