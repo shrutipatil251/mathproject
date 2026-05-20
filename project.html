@@ -1929,7 +1929,7 @@ function solveEquation(){
     <span class="highlight">Integrating Factor:</span>
 
     \\[
-    IF=e^{\\int ${p}dx}=e^{${p}x}
+    IF=e<sup>{\\int ${p}dx}=e^{${p}x}
     \\]
     `;
 
@@ -2058,27 +2058,76 @@ window.onload = solveEquation;
             </div>
  
             <div class="mcq-question">
-                <p>Q1. 1. Solve (d^2 y)/(dx^2 )+3 dy/dx+2y=sin⁡(e^x)</p>
-                <label class="mcq-option"><input type="radio" name="pq1" value="a"> 0</label>
-                <label class="mcq-option"><input type="radio" name="pq1" value="b"> n−1</label>
-                <label class="mcq-option"><input type="radio" name="pq1" value="c"> n</label>
-                <label class="mcq-option"><input type="radio" name="pq1" value="d"> 1</label>
+                <p>Q1. Solve d<sup>2</sup>y/dx<sup>2</sup> + 3dy/dx +2y = sin(e<sup>x</sup>): </p>
+                <label class="mcq-option"><input type="radio" name="pq1" value="a">y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> - 1/2 cos(e⁡<sup>x</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq1" value="b">y = c1e<sup>x</sup> + c2e<sup>2x</sup> + 1/2sin⁡(e<sup>x</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq1" value="c">y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> + 1/2cos⁡(e<sup>x</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq1" value="d">y = c1 + c2x + sin⁡(e<sup>x</sup>)</label>
             </div>
  
             <div class="mcq-question">
-                <p>Q2. A system of linear equations AX = B is consistent if:</p>
-                <label class="mcq-option"><input type="radio" name="pq2" value="a"> Rank(A) ≠ Rank(A|B)</label>
-                <label class="mcq-option"><input type="radio" name="pq2" value="b"> Rank(A) = Rank(A|B)</label>
-                <label class="mcq-option"><input type="radio" name="pq2" value="c"> Rank(A) = 0</label>
-                <label class="mcq-option"><input type="radio" name="pq2" value="d"> Det(A) = 0</label>
+                <p>Q2. Solve d<sup>2</sup>y/(dx<sup>2</sup> + 3dy/dx + 2y = e<sup>(e<sup>x</sup> )</sup>: </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a">y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> + 1/3e<sup>(e<sup>x</sup>)</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b">y = c1e<sup>x</sup> + c2e<sup>2x</sup> + e<sup>(e<sup>x</sup> )</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y= c1e<sup>(-x)</sup>+ c2e<sup>(-2x)</sup> - 1/3 e<sup>(e<sup>x</sup> )</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y= c1 + c2x + e<sup>(e<sup>x</sup>)</sup></label>
             </div>
  
             <div class="mcq-question">
-                <p>Q3. If rank of a 3×3 matrix A is 2, then A is:</p>
-                <label class="mcq-option"><input type="radio" name="pq3" value="a"> Invertible</label>
-                <label class="mcq-option"><input type="radio" name="pq3" value="b"> Singular</label>
-                <label class="mcq-option"><input type="radio" name="pq3" value="c"> Identity</label>
-                <label class="mcq-option"><input type="radio" name="pq3" value="d"> Symmetric</label>
+                <p>Q3. Solve (d<sup>2</sup> y)/(dx<sup>2</sup>) + 3dy/dx + 2y = e<sup>(e<sup>x</sup>)</sup>+cos⁡(e<sup>x</sup>): </p>
+                <label class="mcq-option"><input type="radio" name="pq3" value="a">y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> + 1/3e<sup>(e<sup>x</sup>)</sup> + 1/2sin⁡(e<sup>x</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq3" value="b">y= c1e<sup>x</sup> + c2e<sup>2x</sup> + cos⁡(e<sup>x</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq3" value="c">y = ce<sup>(-x)</sup> + c2e<sup>(-2x)</sup> - 1/3e<sup>(e<sup>x</sup>)</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq3" value="d">y = c1 + c2x + sin⁡(e<sup>x</sup>)</label>
+            </div>
+             <div class="mcq-question">
+                <p>Q4. Solve (D<sup>2</sup> + 5D + 6)y = e<sup>(-2x)</sup>sec⁡<sup>2</sup>x(1+2tan⁡x) </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a">y = c1e<sup>(-2x)</sup> + c2e<sup>(-3x)</sup> + e<sup>(-2x)</sup>tan⁡x</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b">y = c1e<sup>2x</sup> + c2e<sup>3x</sup> + tan⁡x </label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1e<sup>(-2x)</sup> + c2e<sup>(-3x)</sup> - e<sup>(-2x)</sup>tan⁡x</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1 + c2x + sec⁡x</label>
+            </div>
+             <div class="mcq-question">
+                <p>Q5. Solve (D<sup>2</sup>-1)y = e<sup>(-x)</sup> sin⁡(e<sup>(-x)</sup>) + cos⁡(e<sup>(-x)</sup> ) </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a"> y = c1e<sup>x</sup></sup> + c2e<sup>(-x)</sup> - sin⁡(e<sup>(-x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b"> y = c1e<sup>x</sup> + c2e<sup>(-x)</sup> + cos⁡(e<sup>(-x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1 + c2x + sin⁡(e<sup>(-x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> - cos⁡(e<sup>(-x)</sup>)</label>
+            </div>
+             <div class="mcq-question">
+                <p>Q6. Solve (D<sup>2</sup>-2D-3)y = 3e<sup>(-3x)</sup>sin⁡(e<sup>(-3x)</sup>) + cos⁡(e<sup>(-3x)</sup> ) </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a">y = c1e<sup>3x</sup> + c2e<sup>(-x)</sup> - cos⁡(e<sup>(-3x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b"> y = c1e<sup>(-3x)</sup> + c2e<sup>x</sup> + sin⁡(e<sup>(-3x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1 + c2x + cos⁡(e<sup>(-3x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1e<sup>3x</sup> + c2e<sup>(-x)</sup> + cos⁡(e<sup>(-3x)</sup>)</label>
+            </div>
+             <div class="mcq-question">
+                <p>Q7. (D<sup>2</sup>-3D+2)y =e<sup>(-x)</sup> + cos⁡(e<sup>(-x)</sup> ) </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a">y = c1e<sup>x</sup> + c2e<sup>2x</sup> - e<sup>(-x)</sup> + sin⁡(e<sup>(-x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b"> y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> + cos⁡(e<sup>(-x)</sup>)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1 + c2x + e<sup>(-x)</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1e<sup>x</sup> + c2e<sup>2x</sup> - cos⁡(e<sup>(-x)</sup>)</label>
+            </div>
+             <div class="mcq-question">
+                <p>Q8. Solve (D<sup>2</sup>+2D+1)y = e<sup>(-x)</sup>/(x+2) </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a">y =(c1 + c2x)e<sup>(-x)</sup> + e<sup>(-x)</sup>(x+2)ln⁡(x+2)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b"> y =(c1 + c2x)e<sup>x</sup> + ln⁡(x+2)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1e<sup>(-x)</sup> + c2e<sup>(-2x)</sup> + 1/(x+2)</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1 + c2x + e<sup>(-x)</sup></label>
+            </div>
+             <div class="mcq-question">
+                <p>Q9. Solve (D<sup>2</sup>-9D+18)y = e<sup>(-3x) </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a">y = c1e<sup>3x</sup> + c2e<sup>6x</sup> + 1/54e<sup>(-3x)</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b"> y = c1e<sup>(-3x)</sup> + c2e<sup>(-6x)</sup> + e<sup>(-3x)</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1 + c2x + 1/18 e<sup>(-3x)</sup></label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1e<sup>3x</sup> + c2e<sup>6x</sup> - 1/54e<sup>(-3x)</sup></label>
+            </div>
+             <div class="mcq-question">
+                <p>Q10. Solve (D<sup>2</sup>-D-2)y = 2log⁡x+1/x+1/x<sup>2</sup>  </p>
+                <label class="mcq-option"><input type="radio" name="pq2" value="a"> y = c1e<sup>2x</sup> + c2e<sup>(-x)</sup> - log⁡x</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="b"> y = c1e<sup>(-2x)</sup> + c2e<sup>x</sup> + log⁡x</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="c">y = c1 + c2x + 1/x</label>
+                <label class="mcq-option"><input type="radio" name="pq2" value="d">y = c1e<sup>2x</sup> + c2e<sup>(-x)</sup> + log⁡x</label>
             </div>
  
             <button class="submit-btn" onclick="submitTest('posttest')">
