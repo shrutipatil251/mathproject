@@ -1151,6 +1151,19 @@ y = c₁ + c₂e<sup>-x</sup>
             <p>Answer before starting the experiment</p>
         </div>
     </div>
+    <div id="scoreBoard"
+style="
+background:#e8f4fc;
+padding:12px 20px;
+border-radius:8px;
+margin-bottom:20px;
+font-size:18px;
+font-weight:bold;
+color:#2c3e50;
+border-left:5px solid #3498db;
+">
+Score: 0
+</div>
 
     <!-- Question 1 -->
     <div class="mcq-question">
@@ -1250,7 +1263,7 @@ y = c₁ + c₂e<sup>-x</sup>
     <div class="mcq-question">
         <p>Q5. The degree of the equation (d<sup>2</sup>y/dx<sup>2</sup>)<sup>2</sup> + dy/dx + y = 0 is:</p>
 
-        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions')">0</button>
+        <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions5')">0</button>
 
         <button class="option-btn" onclick="checkAnswer(this,false,'msg5','hint5','actions5')">1</button>
 
@@ -1465,7 +1478,9 @@ y = c₁ + c₂e<sup>-x</sup>
 
 <!-- JavaScript -->
 <script>
-
+  let retryCount = {};
+let hintUsed = {};
+let totalScore = 0;
 function checkAnswer(button,isCorrect,msgId,hintId,actionsId){
 
     let questionBox = button.parentElement;
@@ -1482,7 +1497,23 @@ function checkAnswer(button,isCorrect,msgId,hintId,actionsId){
 
         button.classList.add("correct");
 
-        message.innerHTML = "Congratulations! Your answer is right";
+        // Default score = 2
+        let marks = 2;
+
+        // If hint used then reduce 1 mark
+        if(hintUsed[msgId]){
+            marks = 1;
+        }
+
+        totalScore += marks;
+
+        // Update score board
+        document.getElementById("scoreBoard").innerHTML =
+        "Score: " + totalScore;
+
+        message.innerHTML =
+        "Congratulations! Your answer is right. +" + marks + " Marks";
+
         message.className = "message success";
 
         actions.style.display = "none";
@@ -1492,30 +1523,62 @@ function checkAnswer(button,isCorrect,msgId,hintId,actionsId){
         button.classList.add("wrong");
 
         message.innerHTML = "Oops! Your answer is wrong";
+
         message.className = "message error";
 
         actions.style.display = "block";
     }
 }
-
 function retryQuestion(button,msgId,hintId,actionsId){
+
+    if(!retryCount[msgId]){
+        retryCount[msgId] = 0;
+    }
+
+    retryCount[msgId]++;
 
     let questionBox = button.parentElement.parentElement;
     let buttons = questionBox.querySelectorAll(".option-btn");
 
-    buttons.forEach(btn=>{
-        btn.disabled = false;
-        btn.classList.remove("correct");
-        btn.classList.remove("wrong");
-    });
+    if(retryCount[msgId] <= 2){
 
-    document.getElementById(msgId).innerHTML = "";
-    document.getElementById(actionsId).style.display = "none";
-    document.getElementById(hintId).style.display = "none";
+        buttons.forEach(btn=>{
+            btn.disabled = false;
+            btn.classList.remove("correct");
+            btn.classList.remove("wrong");
+        });
+
+        document.getElementById(msgId).innerHTML =
+        "Retry Chance Left: " + (2 - retryCount[msgId]);
+
+        document.getElementById(msgId).className = "message error";
+
+        document.getElementById(hintId).style.display = "none";
+    }
+
+    if(retryCount[msgId] >= 2){
+
+        document.getElementById(actionsId).style.display = "none";
+
+        buttons.forEach(btn=>{
+            btn.disabled = true;
+        });
+
+        document.getElementById(msgId).innerHTML =
+        "No more retry chances left.";
+
+        document.getElementById(msgId).className = "message error";
+    }
 }
-
 function showHint(hintId){
+
     document.getElementById(hintId).style.display = "block";
+
+    // Convert hint1 → msg1
+    let msgId = hintId.replace("hint","msg");
+
+    // Store that hint was used
+    hintUsed[msgId] = true;
 }
 
 </script>
