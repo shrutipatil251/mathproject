@@ -1584,27 +1584,465 @@ function showHint(hintId){
 </script>
  
         <!-- 4. SIMULATION PAGE -->
-        <div id="page-simulation" class="content card-page">
-            <button class="back-btn" onclick="goBack()">
-                <i class="fas fa-arrow-left"></i> Back to Dashboard
-            </button>
-            <div class="card-page-header">
-                <i class="fas fa-desktop"></i>
-                <div>
-                    <h2>Simulation</h2>
-                    <p>Interactive matrix rank simulator</p>
-                </div>
-            </div>
-            <div class="sim-placeholder">
-                <i class="fas fa-cogs"></i>
-                <h3>Simulation Loading Area</h3>
-                <iframe src="video.mp4" width="100%" height="500px"></iframe>
-                <p>Your interactive simulation will appear here. Replace this block with your simulation iframe, canvas, or component.</p>
-                <p style="margin-top: 8px; font-size: 13px; background: #fff; padding: 10px 18px; border-radius: 6px; border: 1px solid #d1e7ff;">
-                    Example: <code>&lt;iframe src="simulation.html" width="100%" height="500px"&gt;&lt;/iframe&gt;</code>
-                </p>
-            </div>
+<div id="page-simulation" class="content card-page">
+
+    <button class="back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </button>
+
+    <div class="card-page-header">
+        <i class="fas fa-desktop"></i>
+        <div>
+            <h2>Simulation</h2>
+            <p>Interactive Linear Differential Equation Simulator</p>
         </div>
+    </div>
+
+    <!-- SIMULATION CONTAINER -->
+
+    <div class="lde-container">
+
+        <div class="lde-title">
+            <i class="fas fa-chart-line"></i>
+            General Method of Linear Differential Equation
+        </div>
+
+        <!-- THEORY -->
+
+        <div class="lde-card">
+
+            <h2>
+                <i class="fas fa-book"></i>
+                Theory
+            </h2>
+
+            <div class="math-equation">
+
+                \[
+                \frac{dy}{dx}+Py=Q
+                \]
+
+            </div>
+
+            <p class="theory-text">
+
+                <span class="highlight">Complementary Function (C.F.)</span>
+                is obtained by solving:
+
+                \[
+                \frac{dy}{dx}+Py=0
+                \]
+
+                <span class="highlight">Particular Solution (P.S.)</span>
+                is obtained using integrating factor method.
+
+            </p>
+
+        </div>
+
+        <!-- SIMULATION -->
+
+        <div class="lde-card">
+
+            <h2>
+                <i class="fas fa-flask"></i>
+                Interactive Simulation
+            </h2>
+
+            <div class="lde-grid">
+
+                <!-- INPUT SECTION -->
+
+                <div>
+
+                    <div class="input-group">
+
+                        <label>Enter P</label>
+
+                        <input type="number" id="p" value="2">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Enter Q</label>
+
+                        <input type="number" id="q" value="4">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Enter Constant C</label>
+
+                        <input type="number" id="c" value="1">
+
+                    </div>
+
+                    <div class="button-group">
+
+                        <button class="solve-btn"
+                        onclick="solveEquation()">
+
+                        <i class="fas fa-play"></i>
+                        Solve
+
+                        </button>
+
+                        <button class="reset-btn"
+                        onclick="resetValues()">
+
+                        <i class="fas fa-rotate"></i>
+                        Reset
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- RESULT SECTION -->
+
+                <div>
+
+                    <div class="result-box">
+
+                        <div class="step" id="eq"></div>
+
+                        <div class="step" id="if"></div>
+
+                        <div class="step" id="cf"></div>
+
+                        <div class="step" id="ps"></div>
+
+                        <div class="step" id="solution"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- GRAPH -->
+
+        <div class="lde-card">
+
+            <h2>
+                <i class="fas fa-chart-area"></i>
+                Graphical Representation
+            </h2>
+
+            <div id="graph"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Plotly -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- MathJax -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+.lde-container{
+
+    margin-top:20px;
+}
+
+.lde-title{
+
+    text-align:center;
+    font-size:34px;
+    font-weight:bold;
+    color:#7c3aed;
+    margin-bottom:25px;
+}
+
+.lde-card{
+
+    background:linear-gradient(135deg,#f5f3ff,#ffffff);
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 8px 20px rgba(124,58,237,0.15);
+}
+
+.lde-card h2{
+
+    color:#7c3aed;
+    margin-bottom:20px;
+}
+
+.math-equation{
+
+    font-size:24px;
+    color:#4b0082;
+}
+
+.theory-text{
+
+    font-size:18px;
+    line-height:1.8;
+    color:#4b0082;
+}
+
+.highlight{
+
+    color:#9333ea;
+    font-weight:bold;
+}
+
+.lde-grid{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.input-group{
+
+    margin-bottom:18px;
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#4b0082;
+}
+
+.input-group input{
+
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:2px solid #d8b4fe;
+    background:white;
+    font-size:16px;
+    outline:none;
+}
+
+.input-group input:focus{
+
+    border-color:#8b5cf6;
+}
+
+.button-group{
+
+    margin-top:20px;
+}
+
+.solve-btn,
+.reset-btn{
+
+    padding:14px 22px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:0.3s;
+}
+
+.solve-btn{
+
+    background:#8b5cf6;
+}
+
+.reset-btn{
+
+    background:#ec4899;
+}
+
+.solve-btn:hover,
+.reset-btn:hover{
+
+    transform:scale(1.05);
+}
+
+.result-box{
+
+    background:#faf5ff;
+    padding:20px;
+    border-radius:20px;
+    border:2px solid #e9d5ff;
+}
+
+.step{
+
+    margin-bottom:20px;
+    font-size:19px;
+    color:#4b0082;
+}
+
+#graph{
+
+    width:100%;
+    height:500px;
+}
+
+@media(max-width:900px){
+
+    .lde-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+<script>
+
+function solveEquation(){
+
+    let p = parseFloat(document.getElementById("p").value);
+    let q = parseFloat(document.getElementById("q").value);
+    let c = parseFloat(document.getElementById("c").value);
+
+    if(isNaN(p) || isNaN(q) || isNaN(c)){
+
+        alert("Please enter valid values");
+        return;
+    }
+
+    document.getElementById("eq").innerHTML =
+
+    `
+    <span class="highlight">Given Equation:</span>
+
+    \\[
+    \\frac{dy}{dx}+${p}y=${q}
+    \\]
+    `;
+
+    document.getElementById("if").innerHTML =
+
+    `
+    <span class="highlight">Integrating Factor:</span>
+
+    \\[
+    IF=e^{\\int ${p}dx}=e^{${p}x}
+    \\]
+    `;
+
+    document.getElementById("cf").innerHTML =
+
+    `
+    <span class="highlight">Complementary Function:</span>
+
+    \\[
+    y_c=${c}e^{-${p}x}
+    \\]
+    `;
+
+    let ps = (q/p).toFixed(2);
+
+    document.getElementById("ps").innerHTML =
+
+    `
+    <span class="highlight">Particular Solution:</span>
+
+    \\[
+    y_p=${ps}
+    \\]
+    `;
+
+    document.getElementById("solution").innerHTML =
+
+    `
+    <span class="highlight">Complete Solution:</span>
+
+    \\[
+    y=${ps}+${c}e^{-${p}x}
+    \\]
+    `;
+
+    MathJax.typeset();
+
+    drawGraph(p,q,c);
+}
+
+function drawGraph(p,q,c){
+
+    let x = [];
+    let y = [];
+
+    for(let i=0;i<=10;i+=0.1){
+
+        let val = (q/p) + c*Math.exp(-p*i);
+
+        x.push(i);
+        y.push(val);
+    }
+
+    let data = [
+
+        {
+
+            x:x,
+            y:y,
+            mode:'lines',
+            name:'Solution Curve',
+            line:{
+                width:4,
+                color:'#8b5cf6'
+            }
+
+        }
+
+    ];
+
+    let layout = {
+
+        title:'Linear Differential Equation Solution',
+
+        paper_bgcolor:'rgba(0,0,0,0)',
+
+        plot_bgcolor:'#faf5ff',
+
+        font:{
+            color:'#4b0082'
+        },
+
+        xaxis:{
+            title:'x'
+        },
+
+        yaxis:{
+            title:'y'
+        }
+
+    };
+
+    Plotly.newPlot('graph',data,layout,{responsive:true});
+}
+
+function resetValues(){
+
+    document.getElementById("p").value = 2;
+    document.getElementById("q").value = 4;
+    document.getElementById("c").value = 1;
+
+    document.getElementById("eq").innerHTML = "";
+    document.getElementById("if").innerHTML = "";
+    document.getElementById("cf").innerHTML = "";
+    document.getElementById("ps").innerHTML = "";
+    document.getElementById("solution").innerHTML = "";
+
+    Plotly.purge('graph');
+}
+
+window.onload = solveEquation;
+
+</script>
  
         <!-- 5. POSTTEST PAGE -->
         <div id="page-posttest" class="content card-page">
